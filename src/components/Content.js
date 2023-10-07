@@ -1,4 +1,5 @@
 function Content() {
+    // this is what will return in the browser from component content.js
     return (
         <div>
             <h1>Hello World</h1>

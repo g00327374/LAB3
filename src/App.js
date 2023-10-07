@@ -1,40 +1,44 @@
 // import bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import local css
 import './App.css';
-// import header, content, and footer component to include its contents
-// in app.js which will be shown in localhost:3000
+// import header, content, and footer component to add contents 
+// which will be displayed on localhost:3000
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
-// import container, nav, and navbar to use navbag function
+// import container, nav, and navbar to use navbar function
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import browserrouter, routes, and route to use react functions
 // this includes the <routes></routes> and <route path='/'></route>
-// functions
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-{/* To make a comment in js file use ctrl k + ctrl c */}
+{/* to make a comment in js file use ctrl k + ctrl c */}
 function App() {
   return (
-    // The browser router
+    // you need a browser router to store all of the other components
     <BrowserRouter>
       <div className="App">
-        {/* Start of navbar function */}
+        {/* start of navbar function */}
         <Navbar bg="primary" data-bs-theme="dark">
           <Container>
             <Navbar.Brand href="/">Navbar</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              {/* The command /read changes the name of the
-              url by adding on the "/read" at the end of localhost:3000 */}
+              {/* the command /read and /create changes the name of the
+              url by adding "/read" or /create at the end of "localhost:3000"
+              it also calls the components that were assigned in route path*/}
               <Nav.Link href="/read">Read</Nav.Link>
               <Nav.Link href="/create">Create</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
-
+        
+        {/* to call each component from the component folder 
+        the route path=/'read' contains the content of the component Header.js because
+        <Content></Content> is called inside the element tag*/}
         <Routes>
           <Route path='/' element={<Content></Content>}></Route>
           <Route path='/read' element={<Header></Header>}></Route>
