@@ -4,9 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 // import header, content, and footer component to add contents 
 // which will be displayed on localhost:3000
-import Header from './components/Header';
-import Footer from './components/Footer';
+//import Header from './components/Header';
+//import Footer from './components/Footer';
 import Content from './components/Content';
+import Read from './components/Read';
+import Create from './components/Create';
 // import container, nav, and navbar to use navbar function
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -41,8 +43,8 @@ function App() {
         <Content></Content> is called inside the element tag*/}
         <Routes>
           <Route path='/' element={<Content></Content>}></Route>
-          <Route path='/read' element={<Header></Header>}></Route>
-          <Route path='/create' element={<Footer></Footer>}></Route>
+          <Route path='/read' element={<Read></Read>}></Route>
+          <Route path='/create' element={<Create></Create>}></Route>
         </Routes>
       </div>
     </BrowserRouter>
