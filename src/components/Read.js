@@ -1,8 +1,13 @@
+// import Books component to pass or call data from it
 import Books from "./Books"
+// create my component Read
 function Read(){
+    // create my array called data
     const data = 
     [
+        // create 3 books
         {
+            // the isbn will be used as the unique identifier to easily call specific books
             "title": "Learn Git in a Month of Lunches",
             "isbn": "1617292419",
             "pageCount": 0,
@@ -38,9 +43,13 @@ function Read(){
         }
     ];
 
+    // create object Books
     return(
         <div>
             <h2>Hello from Read Component.</h2>
+
+            {/* pass all the array elements from data into myBooks */}
+            {/* must call the parent component Books first before instantiating the variable myBooks*/}
             <Books myBooks={data}></Books>
         </div>
     )
